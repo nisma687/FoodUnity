@@ -9,6 +9,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import LogOut from "../Pages/LogOut";
+import PrivateRoute from "./PrivateRoute";
 // import axios from "axios";
 // import Home from "../Pages/Home/Home";
   const router = createBrowserRouter([
@@ -37,7 +38,9 @@ import LogOut from "../Pages/LogOut";
         },
         {
           path:'/featured/:id',
-          element:<FoodDetails />,
+          element:<PrivateRoute>
+            <FoodDetails />
+          </PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/featured/${params.id}`)
 
           

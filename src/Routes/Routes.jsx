@@ -7,6 +7,8 @@ import App from "../App";
 import FoodDetails from "../Pages/FoodDetails/FoodDetails";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
+import LogOut from "../Pages/LogOut";
 // import axios from "axios";
 // import Home from "../Pages/Home/Home";
   const router = createBrowserRouter([
@@ -20,8 +22,18 @@ import Login from "../Pages/Login/Login";
 
         },
         {
+          path:'/logOut',
+          element:<LogOut/>
+
+        },
+        {
           path:'/login',
           element:<Login/>
+        },
+        {
+          path:'/register',
+          element:<Register/>
+
         },
         {
           path:'/featured/:id',

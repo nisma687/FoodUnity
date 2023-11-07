@@ -1,23 +1,44 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { IoFastFoodSharp } from "react-icons/io5";
 
 import './nav.css';
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext);
+  const handleLogOut=()=>{
+    logOut()
+    .then(res=>{
+      console.log('logged out',res);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
     const navLink=<>
     <li><NavLink to="/" activeclassname="active" >Home</NavLink></li>
     <li><NavLink to="/availfoods"
     activeclassname="active"
     >Available Foods</NavLink></li>
-    <li><NavLink to="/login"
-    activeclassname="active"
-    >Login</NavLink></li>
+    
     <li><NavLink
     activeclassname="active"
      to="/register">Register</NavLink></li>
   
-    
+    {
+      user?<li>
+        <button>
+        <Link to="/logout"
+      onClick={handleLogOut}
+      activeclassname="active"
+      >LogOut</Link>
+        </button>
+      </li>:<li><NavLink to="/login"
+      activeclassname="active"
+      >Login</NavLink></li>
+    }
 
 
     

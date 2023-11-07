@@ -1,7 +1,11 @@
 
-import { Link } from "react-router-dom";
+import { useContext, 
+  useState } from "react";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, 
+   useNavigate } 
+from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 
@@ -12,6 +16,11 @@ const Login = () => {
  
   const location=useLocation();
   console.log(location);
+  const {login}=useContext(AuthContext);
+  const navigate=useNavigate();
+const [error,setError]=useState('');
+const [success,setSuccess]=useState('');
+
   
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,6 +28,26 @@ const Login = () => {
     const email=form.email.value;
     const password=form.password.value;
     console.log(email,password);
+    setError('');
+        setSuccess('');
+        // console.log(email,password);
+        if(!email || !password)
+        {
+          setError("Please enter email and password");
+          return;
+        }
+        login(email,password)
+        .then(res=>{
+          setSuccess("Login Successfully");
+          console.log(res.user);
+          navigate(location?.state? 
+            location.state : "/")
+        })
+        .catch(error=>{
+        
+          setError(error.message);
+          console.log(error.message);
+        })
     
 
     
@@ -62,7 +91,13 @@ const Login = () => {
         
         </div>
       </form>
-      <p className="text-center font-semibold mb-4">New to here?Please<Link to="/signUp" className="underline text-orange-600">Sign Up</Link></p>
+      <p className="text-center font-semibold mb-4">New to here?Please<Link to="/register" className="underline text-orange-600">Register</Link></p>
+      {
+                error && <p className="text-red-500">{error}</p>
+              }
+              {
+                success && <p className="text-green-500">{success}</p>
+              }
     </div>
   </div>
 </div>

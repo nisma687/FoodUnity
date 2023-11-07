@@ -16,12 +16,25 @@ const Login = () => {
  
   const location=useLocation();
   console.log(location);
-  const {login}=useContext(AuthContext);
+  const {login,signUpWithGoogle,user}=useContext(AuthContext);
   const navigate=useNavigate();
 const [error,setError]=useState('');
 const [success,setSuccess]=useState('');
 
-  
+  const handleLoginWithGoogle=()=>{
+    signUpWithGoogle()
+    .then(res=>{
+      console.log(res.user);
+      console.log(user.displayName);
+      navigate(location?.state? 
+        location.state : "/")
+    })
+    .catch(error=>{
+      setError(error.message);
+      console.log(error.message);
+    })
+  }
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form=e.target;
@@ -89,6 +102,13 @@ const [success,setSuccess]=useState('');
         className="btn btn-primary"
          value="Login" />
         
+
+        </div>
+        <div>
+          <button
+          onClick={handleLoginWithGoogle}
+          className="btn btn-ghost btn-sm btn-block mt-4"
+          >Sign Up With Google</button>
         </div>
       </form>
       <p className="text-center font-semibold mb-4">New to here?Please<Link to="/register" className="underline text-orange-600">Register</Link></p>

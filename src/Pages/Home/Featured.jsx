@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {FaStarHalfAlt} from 'react-icons/fa'
 import useAxiosHook from "../../hooks/UseAxiosHook";
 import FeaturedCard from "./FeaturedCard";
+import { Link } from "react-router-dom";
 const Featured = () => {
     const axiosSecure=useAxiosHook();
     const [foods,setfoods]=useState([]);
@@ -24,8 +25,16 @@ const Featured = () => {
             grid-cols-1 
             lg:grid-cols-3 ">
                 {
-                    foods.map(food=><FeaturedCard key={food._id} food={food}/>)
+                    foods.slice(0,5).map(food=><FeaturedCard key={food._id} food={food}/>)
                 }
+
+                <Link to="/availfoods"
+
+                className="btn
+                bg-purple-600
+                 btn-ghost btn-sm btn-block
+                  mt-7"
+                >Show All Foods</Link>
             </div>
         </div>
     );

@@ -10,6 +10,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import LogOut from "../Pages/LogOut";
 import PrivateRoute from "./PrivateRoute";
+import AllAvailableFoods from "../Pages/AllAvailableFoods/AllAvailableFoods";
+import AddFoods from "../Pages/AddFoods/AddFoods";
 // import axios from "axios";
 // import Home from "../Pages/Home/Home";
   const router = createBrowserRouter([
@@ -34,6 +36,15 @@ import PrivateRoute from "./PrivateRoute";
         {
           path:'/register',
           element:<Register/>
+
+        },
+        {
+          path:'/availfoods',
+          element:<AllAvailableFoods/>
+        },
+        {
+          path:'/addfood',
+          element:<AddFoods/>
 
         },
         {

@@ -26,7 +26,16 @@ const Navbar = () => {
     <li><NavLink
     activeclassname="active"
      to="/register">Register</NavLink></li>
-  
+    {
+      user && <>
+        <li><NavLink to="/addfood">AddFoods</NavLink></li>
+        <li><NavLink to="/myfoods">Manage Foods</NavLink></li>
+        <li><NavLink to="/foodreq">Food Request</NavLink></li>
+
+      </>
+
+    }
+
     {
       user?<li>
         <button>
@@ -39,7 +48,7 @@ const Navbar = () => {
       activeclassname="active"
       >Login</NavLink></li>
     }
-
+    
 
     
    

@@ -14,6 +14,7 @@ import AllAvailableFoods from "../Pages/AllAvailableFoods/AllAvailableFoods";
 import AddFoods from "../Pages/AddFoods/AddFoods";
 import FoodRequest from "../Pages/FoodRequest/FoodRequest";
 import ManageFood from "../Pages/ManageFood/ManageFood";
+import Update from "../Pages/Update/Update";
 // import axios from "axios";
 // import Home from "../Pages/Home/Home";
   const router = createBrowserRouter([
@@ -66,6 +67,13 @@ import ManageFood from "../Pages/ManageFood/ManageFood";
           loader:({params})=>fetch(`http://localhost:5000/featured/${params.id}`)
 
           
+        },
+        {
+          path:'/update/:id',
+          element:<PrivateRoute>
+            <Update />
+          </PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/featured/${params.id}`)
         },
         {
           path:'/myfood',

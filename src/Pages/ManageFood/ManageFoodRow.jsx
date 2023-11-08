@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import { Table } from 'flowbite-react';
 import {LiaEdit} from 'react-icons/lia';
 import useAxiosHook from '../../hooks/UseAxiosHook';
+import { Link } from 'react-router-dom';
 const ManageFoodRow = ({food}) => {
   const axiosSecure=useAxiosHook();
   const {additionalNotes,donatorImage,expiredDateTime,
@@ -32,7 +33,7 @@ const ManageFoodRow = ({food}) => {
         
           .then(res=>{
           console.log('successfully deleted',res);
-          
+
             window.location.reload();
           })
 
@@ -40,6 +41,9 @@ const ManageFoodRow = ({food}) => {
             }
           });
     }
+
+    // const handleEdit=()=>{
+    // }
 
 
   return (
@@ -54,13 +58,13 @@ const ManageFoodRow = ({food}) => {
     <Table.Cell>{expiredDateTime}</Table.Cell>
    
     <Table.Cell>
-      <button
-      // onClick={handleDelete}
+      <Link to={`/update/${_id}`}
+      
         className="btn btn-sm btn-ghost btn-square text-green-500 hover:bg-green-500 hover:text-white   dark:hover:bg-green-500 dark:hover:text-white"
         
       >
       <LiaEdit/>
-      </button>
+      </Link>
     </Table.Cell>
     <Table.Cell>
       <button

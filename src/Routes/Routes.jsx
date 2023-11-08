@@ -15,6 +15,7 @@ import AddFoods from "../Pages/AddFoods/AddFoods";
 import FoodRequest from "../Pages/FoodRequest/FoodRequest";
 import ManageFood from "../Pages/ManageFood/ManageFood";
 import Update from "../Pages/Update/Update";
+import Error from "../Pages/Error";
 // import axios from "axios";
 // import Home from "../Pages/Home/Home";
   const router = createBrowserRouter([
@@ -80,13 +81,19 @@ import Update from "../Pages/Update/Update";
           element:<PrivateRoute>
             <ManageFood />
           </PrivateRoute>,
-        }
+        },
+       
         
          
 
         
       ]
+      
     },
+    {
+      path:'*',
+      element:<Error/>
+    }
   ]);
 
 

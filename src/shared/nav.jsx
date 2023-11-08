@@ -23,6 +23,7 @@ const Navbar = () => {
     activeclassname="active"
     >Available Foods</NavLink></li>
     
+    
     <li><NavLink
     activeclassname="active"
      to="/register">Register</NavLink></li>

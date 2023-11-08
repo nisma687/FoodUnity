@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-
+import {  useLocation } from "react-router-dom";
+import { Navigate } from "react-router";
 
 const PrivateRoute = ({children}) => {
     const {loading,user}=useContext(AuthContext);
-    const navigate=useNavigate();
+    // const navigate=useNavigate();
     const location=useLocation();
     
     if(loading){
@@ -20,13 +20,13 @@ const PrivateRoute = ({children}) => {
     if(user){
         return children;
     }
-    if(!user)
-    {
-        navigate("/login");
-    }
-     return <NavLink
+    // if(!user)
+    // {
+    //     navigate("/login");
+    // }
+     return <Navigate
     state={location.pathname}
-     to="/login"></NavLink>
+     to="/login"></Navigate>
     
     
     // return (

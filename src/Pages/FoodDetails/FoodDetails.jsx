@@ -3,6 +3,8 @@ import useAxiosHook from "../../hooks/UseAxiosHook";
 // import useAxiosHook from "../../hooks/UseAxiosHook";
 
 import Swal from 'sweetalert2';
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const FoodDetails = () => {
@@ -22,6 +24,7 @@ const FoodDetails = () => {
         foodImage,foodName,foodQuantity,pickupLocation
 
     }=data;
+    const {user}=useContext(AuthContext);
     const axiosSecure=useAxiosHook();
     const handleAddFood=(e)=>
     {
@@ -149,7 +152,7 @@ const FoodDetails = () => {
         <label className="input-group">
          
     <input type="text" placeholder="Donor Image Url" 
-    value={donator.donatorImage}
+    value={user?.photoURL}
     name="donorImgUrl"
     className="input input-bordered w-full" />
         </label>
@@ -163,7 +166,7 @@ const FoodDetails = () => {
          
     <input type="text" placeholder="Donor Name" 
     name="donorName"
-    value={donator.donatorName}
+    value={user?.displayName}
     className="input input-bordered w-full" />
         </label>
         </div>

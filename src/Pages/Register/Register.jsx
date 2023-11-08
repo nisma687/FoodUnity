@@ -55,6 +55,10 @@ const { createUser}=useContext(AuthContext);
           const user = userCredential.user;
           console.log(user);
           setSuccess("User created successfully");
+          user.updateProfile({
+            displayName: name,
+            photoURL: photoURL
+          })
           navigate('/login');
           // ...
         })

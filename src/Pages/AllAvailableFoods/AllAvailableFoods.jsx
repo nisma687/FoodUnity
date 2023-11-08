@@ -6,19 +6,24 @@ import AllAvailableFoodCard from "./AllAvailableFoodCard";
 const AllAvailableFoods = () => {
     const[foods,setfoods]=useState([]);
     const axiosSecure=useAxiosHook();
+    const [loading,setloading]=useState(false);
     const handleSearch=(e)=>{
         e.preventDefault();
         const form=e.target;
         const search=form.search.value;
         console.log(search);
+        setloading(true);
+        
         axiosSecure.get(`/search/${search}`)
         .then(res=>{
             console.log(res.data);
             setfoods(res.data);
+            setloading(false);
         })
         
     
     }
+   
     useEffect(()=>{
         axiosSecure.get('/featured')
         .then(res=>

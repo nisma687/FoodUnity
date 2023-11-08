@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -7,7 +7,7 @@ const AllAvailableFoodCard = ({food}) => {
         foodImage,foodName,foodQuantity,pickupLocation,_id
 
     }=food;
-    const [loading,setLoading]=useState(false);
+    // const [loading,setLoading]=useState(false);
     return (
         <div>
         

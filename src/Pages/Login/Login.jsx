@@ -28,6 +28,7 @@ const [success,setSuccess]=useState('');
       console.log(user.displayName);
       navigate(location?.state? 
         location.state : "/")
+
     })
     .catch(error=>{
       setError(error.message);
@@ -53,6 +54,7 @@ const [success,setSuccess]=useState('');
         .then(res=>{
           setSuccess("Login Successfully");
           console.log(res.user);
+          
           navigate(location?.state? 
             location.state : "/")
         })

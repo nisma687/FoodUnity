@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import useAxiosHook from "../../hooks/UseAxiosHook";
 import Swal from 'sweetalert2';
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const AddFoods = () => {
     const axiosSecure=useAxiosHook();
+    const {user}=useContext(AuthContext);
     const handleAddFood=(e)=>
        {
         e.preventDefault();
@@ -16,9 +19,13 @@ const AddFoods = () => {
         const location=form.location.value;
         const expiredDate=form.expiredDate.value;
         const additionalNotes=form.additionalNotes.value;
-        console.log(foodName,foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes);
+        const status=form.status.value;
+        console.log(foodName,
+            status,
+            foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes);
         const food={
             foodName,
+            status,
             foodImgUrl,
             donorImgUrl,
             donorName,
@@ -91,11 +98,13 @@ const AddFoods = () => {
 
             <div className="form-control md:w-1/2">
                 <label className="label">
+                    
             <span className="label-text">Donor Image Url </span>
                 </label>
             <label className="input-group">
              
         <input type="text" placeholder="Donor Image Url" 
+        defaultValue={user?.photoURL}
         name="donorImgUrl"
         className="input input-bordered w-full" />
             </label>
@@ -108,6 +117,7 @@ const AddFoods = () => {
             <label className="input-group">
              
         <input type="text" placeholder="Donor Name" 
+        defaultValue={user?.displayName}
         name="donorName"
         className="input input-bordered w-full" />
             </label>
@@ -170,6 +180,18 @@ const AddFoods = () => {
              
         <input type="text" placeholder="Additional Notes" 
         name="additionalNotes"
+        className="input input-bordered w-full" />
+            </label>
+            </div>
+            <div className="form-control w-full">
+                <label className="label">
+            <span className="label-text">Status</span>
+                </label>
+            <label className="input-group">
+             
+        <input type="text" placeholder="Status"
+        defaultValue={"Available"}
+        name="status"
         className="input input-bordered w-full" />
             </label>
             </div>

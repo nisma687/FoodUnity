@@ -12,6 +12,7 @@ import LogOut from "../Pages/LogOut";
 import PrivateRoute from "./PrivateRoute";
 import AllAvailableFoods from "../Pages/AllAvailableFoods/AllAvailableFoods";
 import AddFoods from "../Pages/AddFoods/AddFoods";
+import FoodRequest from "../Pages/FoodRequest/FoodRequest";
 // import axios from "axios";
 // import Home from "../Pages/Home/Home";
   const router = createBrowserRouter([
@@ -44,7 +45,16 @@ import AddFoods from "../Pages/AddFoods/AddFoods";
         },
         {
           path:'/addfood',
-          element:<AddFoods/>
+          element:<PrivateRoute>
+            <AddFoods/>
+          </PrivateRoute>
+
+        },
+        {
+          path:'/requestfood',
+          element:<PrivateRoute>
+            <FoodRequest />
+          </PrivateRoute>,
 
         },
         {

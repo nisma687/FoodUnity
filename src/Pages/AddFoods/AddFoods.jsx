@@ -1,11 +1,45 @@
+import useAxiosHook from "../../hooks/UseAxiosHook";
 
 
 const AddFoods = () => {
-    const handleAddFood=(e)=>{
+    const axiosSecure=useAxiosHook();
+    const handleAddFood=(e)=>
+       {
         e.preventDefault();
-      
+        const form=e.target;
+        const foodName=form.foodName.value;
+        const foodImgUrl=form.foodImgUrl.value;
+        const donorImgUrl=form.donorImgUrl.value;
+        const donorName=form.donorName.value;
+        const quantity=form.quantity.value;
+        const location=form.location.value;
+        const expiredDate=form.expiredDate.value;
+        const additionalNotes=form.additionalNotes.value;
+        console.log(foodName,foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes);
+        const food={
+            foodName,
+            foodImgUrl,
+            donorImgUrl,
+            donorName,
+            quantity,
+            location,
+            expiredDate,
+            additionalNotes
+        }
+        axiosSecure.post('/addfood',food)
+        .then(res=>{
+            console.log(res);
+            alert("Food Added Successfully");
+        })
+        .catch(err=>{
+            console.log(err);
+            alert("Food Adding Failed");
+        })
 
-    }
+
+       }
+    
+    
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h2 className="text-4xl font-extrabold text-center text-purple-600 mb-4">FooD Insertion</h2>

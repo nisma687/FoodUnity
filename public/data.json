@@ -2,10 +2,10 @@
       {
         "foodImage": "https://i.ibb.co/xStzzTj/fried-vegetables-with-sauce-pan.jpg",
         "foodName": "Vegetable Stir Fry",
-        "donator": {
+    
           "donatorImage": "https://i.ibb.co/9rM77jQ/newcomer-get-know-teammates-pleased-good-looking-businesswoman-transparent-glasses-blue-collar-shirt.jpg",
-          "donatorName": "Sarah Johnson"
-        },
+          "donatorName": "Sarah Johnson",
+   
         "foodQuantity": 4,
         "pickupLocation": "123 Main Street",
         "expiredDateTime": "2023-12-15T18:00:00",
@@ -14,10 +14,10 @@
       {
         "foodImage": "https://i.ibb.co/6RghMSr/top-view-tasty-meat-soup-with-potatoes-seasonings-dark-desk.jpg",
         "foodName": "Chicken Curry",
-        "donator": {
+     
           "donatorImage": "https://i.ibb.co/mvnjLMK/portrait-man-laughing.jpg",
-          "donatorName": "John Smith"
-        },
+          "donatorName": "John Smith",
+    
         "foodQuantity": 6,
         "pickupLocation": "456 Oak Avenue",
         "expiredDateTime": "2023-12-14T19:30:00",
@@ -26,10 +26,10 @@
       {
         "foodImage": "https://i.ibb.co/q947z6B/authentic-italian-pasta.jpg",
         "foodName": "Pasta Primavera",
-        "donator": {
+      
           "donatorImage": "https://i.ibb.co/YcWQCqJ/young-cute-woman-cap-glasses-posing-outside-showing-thumbs-up-high-quality-photo.jpg",
-          "donatorName": "Emily White"
-        },
+          "donatorName": "Emily White",
+      
         "foodQuantity": 5,
         "pickupLocation": "789 Elm Street",
         "expiredDateTime": "2023-12-16T17:45:00",
@@ -38,10 +38,9 @@
       {
         "foodImage": "https://i.ibb.co/NYXbBFV/mixed-assorted-fruits.jpg",
         "foodName": "Fruit Salad",
-        "donator": {
+      
           "donatorImage": "https://i.ibb.co/sW6rThK/smiling-young-man-with-crossed-arms-outdoors.jpg",
-          "donatorName": "Michael Brown"
-        },
+          "donatorName": "Michael Brown",
         "foodQuantity": 8,
         "pickupLocation": "101 Pine Road",
         "expiredDateTime": "2023-12-13T20:15:00",
@@ -50,10 +49,10 @@
       {
         "foodImage": "https://i.ibb.co/ChqKwpY/burritos-wraps-with-minced-beef-vegetables-wooden-surface.jpg",
         "foodName": "Bean Burritos",
-        "donator": {
+        
           "donatorImage": "https://i.ibb.co/YcWQCqJ/young-cute-woman-cap-glasses-posing-outside-showing-thumbs-up-high-quality-photo.jpg",
-          "donatorName": "Jessica Lee"
-        },
+          "donatorName": "Jessica Lee",
+      
         "foodQuantity": 3,
         "pickupLocation": "202 Cedar Lane",
         "expiredDateTime": "2023-12-17T18:30:00",

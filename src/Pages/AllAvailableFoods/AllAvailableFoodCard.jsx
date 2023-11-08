@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 
 const AllAvailableFoodCard = ({food}) => {
-    const {additionalNotes,donator,expiredDateTime,
+    const {additionalNotes,donatorImage,expiredDateTime,
         foodImage,foodName,foodQuantity,pickupLocation,_id
-
+      ,donatorName
     }=food;
     // const [loading,setLoading]=useState(false);
     return (
@@ -22,12 +22,12 @@ const AllAvailableFoodCard = ({food}) => {
   
   <div className="card-body items-center text-center">
   <h2 className="card-title">{foodName}</h2>
-  <img src={donator?.donatorImage}
+  <img src={donatorImage}
             className="object-cover w-20 h-20 mx-auto rounded-full"
             alt="avatar"
            />
     
-    <p>{donator?.donatorName}</p>
+    <p>{donatorName}</p>
     <p>Food Quantity:{foodQuantity}</p>
     <p>Additional Notes:{additionalNotes}</p>
     <p>Expired Date:{expiredDateTime}</p>

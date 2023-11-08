@@ -20,7 +20,8 @@ const FoodDetails = () => {
     //     })
        
     //   }
-    const {additionalNotes,donator,expiredDateTime,
+    const {additionalNotes,donatorImage,expiredDateTime,
+        donatorName,
         foodImage,foodName,foodQuantity,pickupLocation
 
     }=data;
@@ -44,7 +45,7 @@ const FoodDetails = () => {
      console.log(foodName,foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes,donationAmount,status,requestDate);
      const food={
          foodName,
-         foodImgUrl,
+         foodImage,
          donationAmount,
          donorImgUrl,
          donorName,
@@ -103,11 +104,11 @@ const FoodDetails = () => {
                 <p className="text-2xl"> Expired Date of this food:
                     {expiredDateTime}
                 </p>
-                <img src={donator.donatorImage} alt="" 
+                <img src={donatorImage} alt="" 
                 className="object-cover w-40 h-40 mx-auto "
                 />
                 <p className="text-2xl"> Donator of this food:
-                    {donator.donatorName}
+                    {donatorName}
                 </p>
               {/* Open the modal using document.getElementById('ID').showModal() method */}
     <button className="btn"

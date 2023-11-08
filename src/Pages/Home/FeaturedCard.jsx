@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 const FeaturedCard = ({food}) => {
   
-    const {additionalNotes,donator,expiredDateTime,
+    const {additionalNotes,donatorImage,
+        donatorName,
+      expiredDateTime,
         foodImage,foodName,foodQuantity,pickupLocation,_id
 
     }=food;
@@ -25,11 +27,11 @@ const FeaturedCard = ({food}) => {
       <div className=''>
         
         <p className='text-center'>
-        <img src={donator.donatorImage}
+        <img src={donatorImage}
             className="object-cover w-20 h-20 mx-auto rounded-full"
             alt="avatar"
            />
-          {donator.donatorName}
+          {donatorName}
           </p>
 
       </div>

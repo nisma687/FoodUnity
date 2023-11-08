@@ -12,29 +12,31 @@ const AddFoods = () => {
         e.preventDefault();
         const form=e.target;
         const foodName=form.foodName.value;
-        const foodImgUrl=form.foodImgUrl.value;
-        const donorImgUrl=form.donorImgUrl.value;
+        const foodImage=form.foodImgUrl.value;
+        const donorImage=form.donorImgUrl.value;
         const donorName=form.donorName.value;
-        const quantity=form.quantity.value;
-        const location=form.location.value;
-        const expiredDate=form.expiredDate.value;
+        const foodQuantity=form.quantity.value;
+        const pickupLocation=form.location.value;
+        const expiredDateTime=form.expiredDate.value;
         const additionalNotes=form.additionalNotes.value;
         const status=form.status.value;
         console.log(foodName,
             status,
-            foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes);
+            donorName,pickupLocation,additionalNotes,
+            expiredDateTime,foodImage,foodQuantity,
+            donorImage);
+            
         const food={
             foodName,
             status,
-            foodImgUrl,
-            donorImgUrl,
+            foodQuantity,
             donorName,
-            quantity,
-            location,
-            expiredDate,
+            foodImage,
+            pickupLocation,
+            expiredDateTime,
             additionalNotes
         }
-        axiosSecure.post('/addfood',food)
+        axiosSecure.post('/featured',food)
         .then(res=>{
             console.log(res);
             Swal.fire({

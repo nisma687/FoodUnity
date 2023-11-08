@@ -1,4 +1,5 @@
 import useAxiosHook from "../../hooks/UseAxiosHook";
+import Swal from 'sweetalert2';
 
 
 const AddFoods = () => {
@@ -29,11 +30,23 @@ const AddFoods = () => {
         axiosSecure.post('/addfood',food)
         .then(res=>{
             console.log(res);
-            alert("Food Added Successfully");
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            // alert("Food Added Successfully");
         })
         .catch(err=>{
             console.log(err);
-            alert("Food Adding Failed");
+            Swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
         })
 
 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -6,10 +7,15 @@ const AllAvailableFoodCard = ({food}) => {
         foodImage,foodName,foodQuantity,pickupLocation,_id
 
     }=food;
+    const [loading,setLoading]=useState(false);
     return (
         <div>
+        
             <div className="card w-96 bg-base-100 shadow-xl">
+  
+
   <figure className="px-10 pt-10">
+
     <img src={foodImage} alt="loading img" className="rounded-xl" />
     
   </figure>
@@ -25,6 +31,7 @@ const AllAvailableFoodCard = ({food}) => {
     <p>Food Quantity:{foodQuantity}</p>
     <p>Additional Notes:{additionalNotes}</p>
     <p>Expired Date:{expiredDateTime}</p>
+    <p>Pickup Location:{pickupLocation}</p>
 
     <div className="card-actions">
       <Link

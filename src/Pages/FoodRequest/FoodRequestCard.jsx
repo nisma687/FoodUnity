@@ -1,5 +1,8 @@
 import { Table } from 'flowbite-react';
+
 import useAxiosHook from '../../hooks/UseAxiosHook';
+
+import Swal from 'sweetalert2'
 
 const FoodRequestCard = ({food}) => {
     const axiosSecure=useAxiosHook();
@@ -14,10 +17,37 @@ const FoodRequestCard = ({food}) => {
     const handleDelete=()=>{
         console.log(_id);
         const id=_id;
-        axiosSecure.delete(`/requestfood/${id}`)
-        .then(res=>{
-            console.log('successfully deleted',res);
-        })
+        
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              axiosSecure.delete(`/requestfood/${id}`)
+        
+          .then(res=>{
+          console.log('successfully deleted',res);
+            window.location.reload();
+          })
+
+           
+            }
+          });
+          
+          
+      
+       
+       
     }
     return (
     

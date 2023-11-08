@@ -39,7 +39,9 @@ const FoodDetails = () => {
      const expiredDate=form.expiredDate.value;
      const additionalNotes=form.additionalNotes.value;
      const donationAmount=form.donationAmount.value;
-     console.log(foodName,foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes,donationAmount);
+     const status=form.status.value;
+     const requestDate=form.requestDate.value;
+     console.log(foodName,foodImgUrl,donorImgUrl,donorName,quantity,location,expiredDate,additionalNotes,donationAmount,status,requestDate);
      const food={
          foodName,
          foodImgUrl,
@@ -49,7 +51,10 @@ const FoodDetails = () => {
          quantity,
          location,
          expiredDate,
-         additionalNotes
+         additionalNotes,
+            status,
+            requestDate
+         
      }
      axiosSecure.post('/requestfood',food)
      .then(res=>{
@@ -242,6 +247,32 @@ const FoodDetails = () => {
          
     <input type="text" placeholder="Donation Amount" 
     name="donationAmount"
+    required
+    className="input input-bordered w-full" />
+        </label>
+        </div>
+
+        <div className="form-control w-full">
+            <label className="label">
+        <span className="label-text">Status</span>
+            </label>
+        <label className="input-group">
+         
+    <input type="text" placeholder="Status" 
+    name="status"
+    required
+    defaultValue={"available"}
+    className="input input-bordered w-full" />
+        </label>
+        </div>
+        <div className="form-control w-full">
+            <label className="label">
+        <span className="label-text">Request Date</span>
+            </label>
+        <label className="input-group">
+         
+    <input type="date" placeholder="Request Date" 
+    name="requestDate"
     required
     className="input input-bordered w-full" />
         </label>

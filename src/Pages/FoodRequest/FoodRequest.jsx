@@ -24,10 +24,13 @@ const FoodRequest = () => {
            <div className="mt-4 mb-4">
            <Table hoverable>
       <Table.Head>
-        <Table.HeadCell>Product name</Table.HeadCell>
-        <Table.HeadCell>Color</Table.HeadCell>
-        <Table.HeadCell>Category</Table.HeadCell>
-        <Table.HeadCell>Price</Table.HeadCell>
+        <Table.HeadCell>Donor Name</Table.HeadCell>
+        <Table.HeadCell>Location</Table.HeadCell>
+        <Table.HeadCell>Expired Date</Table.HeadCell>
+        <Table.HeadCell>Donation Amount</Table.HeadCell>
+        <Table.HeadCell>Request Date</Table.HeadCell>
+        <Table.HeadCell>Status</Table.HeadCell>
+
         <Table.HeadCell>
           <span className="sr-only">Edit</span>
         </Table.HeadCell>

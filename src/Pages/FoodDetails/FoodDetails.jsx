@@ -2,6 +2,8 @@ import {  useLoaderData } from "react-router-dom";
 import useAxiosHook from "../../hooks/UseAxiosHook";
 // import useAxiosHook from "../../hooks/UseAxiosHook";
 
+import Swal from 'sweetalert2';
+
 
 const FoodDetails = () => {
     const data=useLoaderData();
@@ -49,12 +51,23 @@ const FoodDetails = () => {
      axiosSecure.post('/requestfood',food)
      .then(res=>{
          console.log(res);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
     
-         alert("Food Added Successfully");
+         
      })
      .catch(err=>{
          console.log(err);
-       alert("Something went wrong");
+         Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
      })
 
 

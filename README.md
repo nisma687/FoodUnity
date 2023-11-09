@@ -20,12 +20,13 @@ This website is basically for the people who wants to donate also who are in nee
 
 ## Links
 
-- git-hub-link(client) :
+- git-hub-link(client) :https://github.com/Porgramming-Hero-web-course/b8a11-client-side-nisma687
 
-- github-link(server):
+- github-link(server): https://github.com/Porgramming-Hero-web-course/b8a11-server-side-nisma687
 
 
 - live link : https://foodunity-42dce.web.app
 
 
-- live link of the server: 
+- live link of the server: https://food-unity-network-server.vercel.app/
+

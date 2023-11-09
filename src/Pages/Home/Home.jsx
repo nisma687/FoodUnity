@@ -4,6 +4,8 @@ import Banner from "./Banner";
 // import useAxiosHook from "../../hooks/UseAxiosHook";
 import Featured from "./Featured";
 import { AuthContext } from "../../provider/AuthProvider";
+import FoodWaste from "./FoodWaste";
+import Events from "./Events";
 
 
 const Home = () => {
@@ -21,6 +23,8 @@ const Home = () => {
             }
             <Banner />
             <Featured />
+            <FoodWaste/>
+            <Events/>
         </div>
     );
 };

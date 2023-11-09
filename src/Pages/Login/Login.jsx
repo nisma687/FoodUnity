@@ -20,7 +20,7 @@ const Login = () => {
   const navigate=useNavigate();
 const [error,setError]=useState('');
 const [success,setSuccess]=useState('');
-
+// const {user}=useContext(AuthContext)
   const handleLoginWithGoogle=()=>{
     signUpWithGoogle()
     .then(res=>{
@@ -54,7 +54,9 @@ const [success,setSuccess]=useState('');
         .then(res=>{
           setSuccess("Login Successfully");
           console.log(res.user);
-          
+          user.updateProfile({
+            displayName: res?.user?.displayName,
+          })
           navigate(location?.state? 
             location.state : "/")
         })

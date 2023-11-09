@@ -9,6 +9,8 @@ const FoodRequest = () => {
     const {user}=useContext(AuthContext);
     const [req,setreq]=useState([]);
     useEffect(()=>{
+      const email=user?.email;
+      console.log(email);
         axiosSecure.get(`/requestfood?donorName=${user.displayName}`)
         .then(res=>{
             console.log(res.data);

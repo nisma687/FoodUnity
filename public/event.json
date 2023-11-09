@@ -1,0 +1,28 @@
+ [
+      {
+        "name": "Zero Waste Challenge",
+        "description": "Join our community-wide challenge to adopt zero-waste practices in your daily life. Learn how to reduce, reuse, and recycle to minimize your environmental impact.",
+        "title": "Zero Waste Challenge Kickoff",
+        "date": "2023-12-01",
+        "link": "https://example.com/zero-waste-challenge",
+        "image": "https://example.com/zero-waste-challenge-image.jpg"
+      },
+      {
+        "name": "Farmers Food Festival",
+        "description": "Celebrate local agriculture and sustainable farming practices at our Farmers Food Festival. Enjoy fresh produce, culinary demonstrations, and learn about supporting local farmers.",
+        "title": "Farmers Food Festival",
+        "date": "2023-11-15",
+        "link": "https://example.com/farmers-food-festival",
+        "image": "https://example.com/farmers-food-festival-image.jpg"
+      },
+      {
+        "name": "Free Cooking Classes",
+        "description": "Participate in our free cooking classes and enhance your culinary skills. Learn how to prepare delicious meals using surplus ingredients and reduce food waste in your kitchen.",
+        "title": "Creative Cooking Workshop",
+        "date": "2023-11-25",
+        "link": "https://example.com/free-cooking-classes",
+        "image": "https://example.com/free-cooking-classes-image.jpg"
+      }
+    ]
+ 
+  

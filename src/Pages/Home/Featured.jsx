@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import {FaStarHalfAlt} from 'react-icons/fa'
-import useAxiosHook from "../../hooks/UseAxiosHook";
+
 import FeaturedCard from "./FeaturedCard";
 import { Link } from "react-router-dom";
+import useAxiosHook from "../../hooks/UseAxiosHook";
+
 const Featured = () => {
     const axiosSecure=useAxiosHook();
     const [foods,setfoods]=useState([]);

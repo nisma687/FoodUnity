@@ -65,7 +65,7 @@ import Error from "../Pages/Error";
           element:<PrivateRoute>
             <FoodDetails />
           </PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/featured/${params.id}`)
+          loader:({params})=>fetch(`https://food-unity-network-server.vercel.app/featured/${params.id}`)
 
           
         },
@@ -74,7 +74,7 @@ import Error from "../Pages/Error";
           element:<PrivateRoute>
             <Update />
           </PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/featured/${params.id}`)
+          loader:({params})=>fetch(`https://food-unity-network-server.vercel.app/featured/${params.id}`)
         },
         {
           path:'/myfood',

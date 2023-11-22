@@ -26,6 +26,9 @@ This website is basically for the people who wants to donate also who are in nee
 
 
 - live link : https://foodunity-42dce.web.app
+or 
+- live link: https://6552fef781c71c13859818b4--heartfelt-meerkat-4e9c86.netlify.app/
+
 
 
 - live link of the server: https://food-unity-network-server.vercel.app/
